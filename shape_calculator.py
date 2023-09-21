@@ -43,25 +43,16 @@ class Rectangle:
 # want area of THIS shape divided by area of passed in shape.
     x = self.get_area()
     y = shape.get_area()
+
     if y > x:
-      answer = int("0")
-      return(answer)
-    elif y == x:
-      answer = int("1")
-      return(answer)
+        return 0  # Return 0 when y cannot fit into x
+    if y == x:
+      return 1
     else:
-      answer = int(x/y)
+      return(x / y)
+      
 
   
-    
-    #print(self.rect)
-    
-    
-#rect = Rectangle(10, 5)
-#print(rect.get_picture())
-#print(rect.get_diagonal())
-#print(rect.get_amount_inside(sq))
-
 class Square(Rectangle):
   def __init__(self, length):
     self.width = length
