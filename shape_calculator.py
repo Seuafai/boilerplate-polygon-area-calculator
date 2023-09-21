@@ -49,7 +49,7 @@ class Rectangle:
     if y == x:
       return 1
     else:
-      return(x / y)
+      return int(x / y)
       
 
   
