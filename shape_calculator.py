@@ -34,10 +34,6 @@ class Rectangle:
   def __str__(self):
     return f"Rectangle(width={self.width}, height={self.height})"
 
-  
-  """
-  Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
-  """
   def get_amount_inside(self, shape):
 # want how many times the passed in shape can fit inside THIS shape
 # want area of THIS shape divided by area of passed in shape.
@@ -66,15 +62,3 @@ class Square(Rectangle):
 
   def __str__(self):
     return f"Square(side={self.width})"
-
-
-
-
-#sq = Square(9)
-#print(sq.get_picture())
-    
-    
-    
-
-  
-  
