@@ -21,20 +21,20 @@ class Rectangle:
 
   def get_picture(self):
     if self.width > 50 or self.height > 50:
-      return ("Too big for picture.")
+        return ("Too big for picture.")
     else:
       picstr = ""
       for row in range(self.height):
         picstr += "*" * self.width + "\n"
       return picstr
 
-  def shape_str(self):
-    #width = self.width
-    self.rect = f"Rectangle(width = {self.width}: width = {self.height})"
-    self.rect = str(self.rect)
-    self.sq = f"Square(side = {self.width}"
-    self.sq = str(self.sq)    
-    #print(self.rect)
+  def __repr__(self):
+    pass
+
+  def __str__(self):
+    return f"Rectangle(width={self.width}, height={self.height})"
+
+  
   """
   Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
   """
@@ -46,9 +46,15 @@ class Rectangle:
     if y > x:
       answer = int("0")
       return(answer)
-    else:
-      answer = round(x / y)
+    elif y == x:
+      answer = int("1")
       return(answer)
+    else:
+      answer = int(x/y)
+
+  
+    
+    #print(self.rect)
     
     
 #rect = Rectangle(10, 5)
@@ -63,8 +69,12 @@ class Square(Rectangle):
     self.sq = self.width, self.height
     
   def set_side(self, length):
+    self.length = length
     self.width = length
     self.height = length
+
+  def __str__(self):
+    return f"Square(side={self.width})"
 
 
 
